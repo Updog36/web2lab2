@@ -10,18 +10,11 @@ app.set("views", path.join(__dirname, "views"));
 app.set('view engine', 'pug');
 const { Pool } = require('pg');
 const pool = new Pool({
-  /*
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
   database: process.env.DB_NAME,
   password: process.env.DB_PASSWORD,
-  */
-  user: 'postgres',
-  host: 'localhost',
-  database: 'web2lab2',
-  password: 'bazepodataka',
-  port: 5432//,
-  //ssl: true
+  port: 5432
 });
 
 const port = 4080;
