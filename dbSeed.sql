@@ -1,0 +1,10 @@
+CREATE TABLE comments (
+	id SERIAL UNIQUE PRIMARY KEY,
+    comment TEXT NOT NULL
+);
+
+CREATE TABLE users (
+	id SERIAL UNIQUE PRIMARY KEY,
+	username VARCHAR(32) NOT NULL,
+	password VARCHAR(64) NOT NULL
+)

@@ -1,0 +1,32 @@
+html
+    head
+        title WEB 2 PART 2: SDE
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+        a(href='/') Povratak
+        h1 Sensitive data exposure
+        p Upute: Upišite korisničko ime i lozinku u polja ispod i kliknite na gumb "Pošalji". Ako su podaci ispravni, bit će prikazani ispod.
+        p Ako je označena opcija "Ranjivost", password je plaintext u bazi. Ako nije, password je hash vrijednost u bazi.
+        p U hipotetskoj situaciji login-a bez ranjivosti, lozinka bi bila poslana kao hash vrijednost, te bi se ta vrijednost uspoređivala s vrijednosti u bazi.
+        p Shvatio sam zadatak kao simuliranje ranjivosti, pa se nisam previše fokusirao na simuliranje posljedica dotične. Nadam se da je to u redu.
+        form(action='/sde', method='POST')
+            input(type='checkbox', name='vulnerable', value='true')
+            el Ranjivost?
+            br
+            input(type='text', name='username', placeholder='Korisničko ime' maxlength='32')
+            input(type='password', name='password', placeholder='Lozinka' maxlength='64')
+            br
+            input(type='submit', value='Pošalji')
+        hr
+        // table with usernames and passwords
+        // use the array passed from the server named "users"
+        h2 Demonstrativni prikaz korisnika u bazi
+        table
+            tr
+                th Korisničko ime
+                th Lozinka
+            each user in users
+                tr
+                    td= user.username
+                    td= user.password
+        hr
