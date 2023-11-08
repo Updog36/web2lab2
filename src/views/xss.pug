@@ -8,6 +8,9 @@ html
         p Upute: Upišite JavaScript kod u polje ispod i kliknite na gumb "Pošalji". 
         p Ako je označena opcija "Ranjivost" te ako je kod ispravan, biti će pohranjen u bazi i aktivirat će se pri ocrtavanju na stranici. 
         p Ako kod nije ispravan ili ako opcija "Ranjivost" nije označena, biti će prikazan kao običan tekst.
+        p Pokušajte upisati: 
+        blockquote <script>alert('XSS')</script> 
+        p i vidjeti što se događa.
         form(action='/xss', method='POST')
             input(type='checkbox', name='vulnerable', value='true')
             el Ranjivost?
